@@ -1,7 +1,8 @@
 {
   "uxplay": {
     "repo": "FDH2/UxPlay",
-    "commit": "05b0275cb1b726592700e47a6e0307544b3d3a52"
+    "commit": "05b0275cb1b726592700e47a6e0307544b3d3a52",
+    "sha256": "e9698b16b2be25d7cbf314e50f3c6f762de5886a6c7de093796fcec6b5305041"
   },
   "toolchain": {
     "version": "20261104",
@@ -2185,6 +2186,11 @@
       "path": "lib/gstreamer-1.0/libgstvolume.dll",
       "sha256": "5e7d7a4969dfadca92f4840c24285ee0e56e3940c7bcc47e7692615f2c974173",
       "bytes": 41653
+    },
+    {
+      "path": "lib/gstreamer-1.0/libgstlevel.dll",
+      "sha256": "7fe1b2d797e90301e899cca878e5532027fa59dac3a4b5a73f597670e873117d",
+      "bytes": 32087
     },
     {
       "path": "lib/gstreamer-1.0/libgstautodetect.dll",

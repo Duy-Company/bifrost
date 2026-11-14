@@ -20,7 +20,7 @@ child.on('error', (error) => {
 })
 async function probe() {
   return new Promise((resolve, reject) => {
-    const socket = createConnection({ host: '127.0.0.1', port: 7000 })
+    const socket = createConnection({ host: '127.0.0.1', port: 7001 })
     let response = Buffer.alloc(0)
     socket.setTimeout(3000)
     socket.on('connect', () =>

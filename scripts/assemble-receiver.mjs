@@ -27,6 +27,7 @@ const plugins = [
   'audioresample',
   'audioparsers',
   'volume',
+  'level',
   'autodetect',
   'wasapi',
   'wasapi2',

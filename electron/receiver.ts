@@ -158,7 +158,7 @@ export class Receiver extends EventEmitter {
       this.endStream()
       this.publish()
     })
-    // Readiness follows a live engine listening on its configured RAOP endpoint.
+    // Readiness follows a live engine listening on its configured RAOP endpoint (the second port in UxPlay -p).
     let attempts = 0
     this.monitor = setInterval(() => {
       if (
@@ -171,7 +171,7 @@ export class Receiver extends EventEmitter {
         return
       }
       attempts++
-      const probe = createConnection({ host: '127.0.0.1', port: 7000 })
+      const probe = createConnection({ host: '127.0.0.1', port: 7001 })
       probe.setTimeout(700)
       probe.once('connect', () => {
         probe.destroy()
