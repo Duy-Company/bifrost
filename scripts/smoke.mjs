@@ -18,7 +18,7 @@ try {
     expect(state.miracast.status).toBe('unavailable')
   }
   expect(await page.locator('html').getAttribute('lang')).toBe('en')
-  expect(await page.getByRole('button').count()).toBe(1)
+  expect(await page.getByRole('button').count()).toBe(0)
   expect(
     await page.getByText(/USB|debugging|Tutorial|Instructions|Settings|Pair device/).count()
   ).toBe(0)
@@ -31,6 +31,16 @@ try {
     }
   })
   expect(windowInfo).toEqual({ minimizable: true, maximizable: true, fullscreenable: true })
+  const layout = await page.evaluate(() => ({
+    title: parseFloat(getComputedStyle(document.querySelector('h1')).fontSize),
+    caption: parseFloat(getComputedStyle(document.querySelector('.welcome-center > p')).fontSize),
+    overflow:
+      document.documentElement.scrollWidth > innerWidth ||
+      document.documentElement.scrollHeight > innerHeight
+  }))
+  expect(layout.title).toBeGreaterThanOrEqual(42)
+  expect(layout.caption).toBeGreaterThanOrEqual(15)
+  expect(layout.overflow).toBe(false)
   await page.screenshot({ path: 'artifacts/bifrost-welcome.png' })
   // The main-window close action hides it, retaining the receiver and tray.
   await app.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].close())

@@ -20,7 +20,7 @@ const plugins = [
   'videoconvertscale',
   'videofilter',
   'videoparsersbad',
-  'jpeg',
+  'png',
   'tcp',
   'libav',
   'audioconvert',

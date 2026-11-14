@@ -2,16 +2,18 @@
 
 A quiet, tray-based wireless screen receiver for Windows. Electron, TypeScript and React, with a white and ice-blue interface and a faceted lightning mark.
 
-The main window is an introduction only. Closing it keeps the receiver running in the system tray. AirPlay sessions open a separate native-framed stream window with minimize, maximize, close and a full-screen button (F11 / Esc). There are no onboarding flows, device setup screens, USB tools or tutorials in the application.
+The main window is an introduction only. Closing it keeps the receiver running in the system tray. AirPlay and Android LAN sessions open a separate native-framed stream window with OS minimize, maximize and close buttons. F11 / Esc enters and leaves true fullscreen. There are no custom caption or fullscreen buttons or tutorials in the application.
 
 [Download Windows v1.0.1](https://github.com/Duy-Company/bifrost/releases/tag/v1.0.1)
 
 ## Receiver architecture
 
-- **AirPlay:** a bundled UxPlay native Windows engine advertises Bifrost on the local network, handles AirPlay authentication/decryption and audio, and sends decoded JPEG frames through a loopback-only TCP sink. Electron opens the stream window on the first actual video frame. Closing the stream restarts the AirPlay receiver, ending the sender session.
+- **Device name:** the computer hostname, without a Bifrost prefix, for both AirPlay and Android LAN discovery.
+- **AirPlay:** a bundled UxPlay native Windows engine handles AirPlay authentication/decryption and audio, and sends decoded lossless PNG frames through a loopback-only TCP sink. The requested profile follows physical primary-monitor pixels (1080p minimum, 4K maximum), with a 60 FPS ceiling and HEVC enabled above 1080p. The sender can negotiate lower resolution or frame rate; PNG does not undo compression in the source video. Electron opens the stream window on the first actual video frame. Closing the stream restarts the AirPlay receiver, ending the sender session.
+- **Android LAN:** the included Android companion uses MediaProjection and the device H.264 encoder over a direct local WebSocket connection. Android Wi-Fi and Windows Ethernet can share the same IP network. Discovery uses `_bifrost._tcp`; a manual receiver address is available if multicast discovery is blocked. The tray can copy receiver addresses. This test sender shares video only, at up to 2560 pixels on the long edge / 60 FPS / 24 Mbps, subject to encoder and network capacity. It does not add Google Cast support to Android's system Cast menu.
 - **Miracast / compatible Smart View:** Windows Wireless Display owns Wi-Fi Direct discovery, negotiation and the native stream window. Bifrost starts that OS receiver, minimizes its idle window and restores it for an incoming stream. Windows must already have Wireless Display and compatible Wi-Fi/display drivers. Unsupported, policy-disabled or unavailable states are reported truthfully. This path cannot be exercised on macOS.
 - **Google Cast:** not implemented. Android Cast menus backed exclusively by Google Cast (including Pixel devices) are not interchangeable with Miracast and will not discover this receiver.
-- **Privacy:** no cloud relay, telemetry or account. Incoming local-network AirPlay connections are intentional. Native Windows permissions and firewall policy still apply.
+- **Privacy:** no cloud relay, telemetry or account. Native Windows permissions and firewall policy still apply. The test Android LAN transport is unencrypted and accepts one sender from the local network; use a trusted LAN. Android requires its standard screen-sharing consent and displays a foreground notification with Stop.
 
 ## Build
 
@@ -23,7 +25,9 @@ The main window is an introduction only. Closing it keeps the receiver running i
 - `electron/main/index.ts`: tray lifecycle, welcome window and separate stream window.
 - `native/windows/miracast.ps1`: Windows Wireless Display adapter; never changes projection permission or OS feature policy.
 - `renderer/`: English welcome screen and minimal video surface.
-- `electron/jpeg.ts`: bounded stream parser with fragmentation tests.
+- `electron/png.ts`: bounded lossless image stream parser with fragmentation tests.
+- `electron/lan.ts`: local discovery, sender handshake and encoded video transport.
+- `android-sender/`: native Android screen sender.
 - `scripts/`: native cross-build and packaging helpers.
 
 ## Dependencies
@@ -37,3 +41,5 @@ Miracast requirements and states follow [Microsoft Wireless Display](https://sup
 Installed Windows builds check the public `Duy-Company/bifrost` GitHub Releases feed 15 seconds after startup and every six hours. The tray includes **Check for updates** and, after a download, **Restart to update**. Updates never interrupt an active stream automatically; installation occurs when the user restarts or quits. No GitHub token is embedded in the app.
 
 A `v*` tag runs the Windows release workflow: build the native engine from pinned source, package the app/update feed, verify installer hashes, start the packaged application on a Windows runner and probe its AirPlay `/info` endpoint, then publish the installer, ZIP, blockmap and `latest.yml`. Physical sender and Miracast hardware tests remain separate.
+
+The current changes are **1.0.2-test.1**, not a published release. The `Test builds (no release)` workflow has read-only repository permissions and only uploads CI artifacts. No updater feed is published. Build the Android test APK with `node scripts/build-android.mjs` (Android SDK, Java 17 and Gradle 8.13 required; `BIFROST_GRADLE` can specify its executable). `node scripts/test-android.mjs` exercises an authorized local Android emulator and Electron together.

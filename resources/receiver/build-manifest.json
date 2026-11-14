@@ -2153,9 +2153,9 @@
       "bytes": 381003
     },
     {
-      "path": "lib/gstreamer-1.0/libgstjpeg.dll",
-      "sha256": "a47d9e70b785d5fc90d6519234333854cdc185d11b67e6592f3168a6c8b45c04",
-      "bytes": 58061
+      "path": "lib/gstreamer-1.0/libgstpng.dll",
+      "sha256": "3eabe39a37166c44b11420ed32f7ceac592ed5a1533076a3c5abd2c9e6887236",
+      "bytes": 41770
     },
     {
       "path": "lib/gstreamer-1.0/libgsttcp.dll",
@@ -2303,9 +2303,9 @@
       "bytes": 888836
     },
     {
-      "path": "bin/libjpeg-8.dll",
-      "sha256": "22286acc18b907d03eec1177c99f54a802a6f8437888d1abb79e65a7ecd14605",
-      "bytes": 963471
+      "path": "bin/libpng16-16.dll",
+      "sha256": "28db7a8c6fcc579ce621729d27f1952324cd3a2b4e24da121611bb586346e732",
+      "bytes": 254777
     },
     {
       "path": "bin/libgstnet-1.0-0.dll",
@@ -2663,11 +2663,6 @@
       "bytes": 737775
     },
     {
-      "path": "bin/libpng16-16.dll",
-      "sha256": "28db7a8c6fcc579ce621729d27f1952324cd3a2b4e24da121611bb586346e732",
-      "bytes": 254777
-    },
-    {
       "path": "bin/libthai-0.dll",
       "sha256": "d8d8b87e9089a811e088f6a01da57c19ed54d2b6613bb85697f1958473f63666",
       "bytes": 71780
@@ -2831,6 +2826,11 @@
       "path": "bin/libbrotlicommon.dll",
       "sha256": "7b0047dc16dd92a7932124dfd5a6e698d342f533a15d37d61f710def66091436",
       "bytes": 140697
+    },
+    {
+      "path": "bin/libjpeg-8.dll",
+      "sha256": "22286acc18b907d03eec1177c99f54a802a6f8437888d1abb79e65a7ecd14605",
+      "bytes": 963471
     },
     {
       "path": "bin/libtiff-6.dll",

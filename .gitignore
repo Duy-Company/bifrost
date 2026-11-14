@@ -12,3 +12,6 @@ windows-validation.json
 .env
 .env.*
 !.env.example
+android-sender/.gradle/
+android-sender/local.properties
+android-sender/**/build/

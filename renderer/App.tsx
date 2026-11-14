@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Maximize2, Minimize2, Radio, Snowflake, Minus, Airplay, Cast } from 'lucide-react'
+import { Radio, Snowflake, Airplay, Cast } from 'lucide-react'
 import { IceBolt } from './components/IceBolt'
 import type { ReceiverState } from '../shared/types'
 const initial: ReceiverState = {
@@ -12,49 +12,102 @@ const initial: ReceiverState = {
 function Stream() {
   const canvas = useRef<HTMLCanvasElement>(null)
   const busy = useRef(false)
-  const [fullscreen, setFullscreen] = useState(false)
   useEffect(() => {
     let active = true
     const context = canvas.current!.getContext('2d', { alpha: false })!
-    const unsubscribe = window.bifrost.onFrame((data) => {
-      if (busy.current) return
-      busy.current = true
-      void createImageBitmap(new Blob([new Uint8Array(data)], { type: 'image/jpeg' }))
-        .then((frame) => {
-          const target = canvas.current
-          if (active && target) {
-            if (target.width !== frame.width || target.height !== frame.height) {
-              target.width = frame.width
-              target.height = frame.height
+    let decoder: VideoDecoder | undefined
+    let configuration: Uint8Array | undefined
+    let needsKey = true
+    const draw = (frame: ImageBitmap | VideoFrame, width: number, height: number) => {
+      const target = canvas.current
+      if (active && target) {
+        if (target.width !== width || target.height !== height) {
+          target.width = width
+          target.height = height
+        }
+        context.drawImage(frame, 0, 0)
+        target.dataset.frames = String(Number(target.dataset.frames || 0) + 1)
+      }
+      frame.close()
+    }
+    const unsubscribe = window.bifrost.onFrame((packet) => {
+      if (packet.kind === 'image') {
+        if (busy.current) return
+        busy.current = true
+        void createImageBitmap(new Blob([new Uint8Array(packet.data)], { type: packet.mime }))
+          .then((frame) => draw(frame, frame.width, frame.height))
+          .catch((error) => console.error('Frame decode failed:', error))
+          .finally(() => {
+            busy.current = false
+          })
+        return
+      }
+      try {
+        const data = new Uint8Array(packet.data)
+        if (packet.config) {
+          let codec = ''
+          for (let i = 0; i < data.length - 6; i++) {
+            const start =
+              data[i] === 0 && data[i + 1] === 0 && data[i + 2] === 1
+                ? i + 3
+                : data[i] === 0 && data[i + 1] === 0 && data[i + 2] === 0 && data[i + 3] === 1
+                  ? i + 4
+                  : -1
+            if (start >= 0 && (data[start] & 31) === 7) {
+              codec =
+                'avc1.' +
+                Array.from(data.slice(start + 1, start + 4))
+                  .map((n) => n.toString(16).padStart(2, '0'))
+                  .join('')
+              break
             }
-            context.drawImage(frame, 0, 0)
           }
-          frame.close()
-        })
-        .catch((error) => console.error('Frame decode failed:', error))
-        .finally(() => {
-          busy.current = false
-        })
+          if (!codec) throw new Error('Invalid Android AVC configuration.')
+          if (decoder && decoder.state !== 'closed') decoder.close()
+          decoder = new VideoDecoder({
+            output: (frame) => draw(frame, frame.displayWidth, frame.displayHeight),
+            error: (error) => {
+              needsKey = true
+              console.error(error.message)
+            }
+          })
+          decoder.configure({ codec, optimizeForLatency: true })
+          configuration = data
+          needsKey = true
+          return
+        }
+        if (!decoder || decoder.state !== 'configured' || (needsKey && !packet.key)) return
+        if (decoder.decodeQueueSize > 6 && !packet.key) {
+          needsKey = true
+          return
+        }
+        let bytes = data
+        if (packet.key && configuration) {
+          bytes = new Uint8Array(configuration.length + data.length)
+          bytes.set(configuration)
+          bytes.set(data, configuration.length)
+        }
+        decoder.decode(
+          new EncodedVideoChunk({
+            type: packet.key ? 'key' : 'delta',
+            timestamp: packet.timestamp,
+            data: bytes
+          })
+        )
+        needsKey = false
+      } catch (error) {
+        console.error('Android frame decode failed:', error)
+      }
     })
-    const resize = () => setFullscreen(window.innerHeight >= screen.height - 2)
-    window.addEventListener('resize', resize)
     return () => {
       active = false
       unsubscribe()
-      window.removeEventListener('resize', resize)
+      if (decoder && decoder.state !== 'closed') decoder.close()
     }
   }, [])
   return (
     <div className="stream">
       <canvas ref={canvas} aria-label="Mirrored screen" />
-      <button
-        className="fullscreen-button"
-        title={fullscreen ? 'Exit full screen' : 'Full screen'}
-        aria-label={fullscreen ? 'Exit full screen' : 'Full screen'}
-        onClick={() => void window.bifrost.fullscreen()}
-      >
-        {fullscreen ? <Minimize2 size={19} /> : <Maximize2 size={19} />}
-      </button>
     </div>
   )
 }
@@ -64,7 +117,7 @@ function Welcome() {
     void window.bifrost.state().then(setState)
     return window.bifrost.onState(setState)
   }, [])
-  const ready = state.airplay.status === 'ready'
+  const ready = state.airplay.status === 'ready' || state.android?.status === 'ready'
   return (
     <main className="welcome">
       <header className="welcome-header">
@@ -72,14 +125,6 @@ function Welcome() {
           <IceBolt />
           <span>Bifrost</span>
         </a>
-        <button
-          className="hide-button"
-          title="Hide to tray"
-          aria-label="Hide to tray"
-          onClick={() => void window.bifrost.hide()}
-        >
-          <Minus size={17} />
-        </button>
       </header>
       <section className="welcome-center">
         <div className="sculpture">
@@ -109,6 +154,12 @@ function Welcome() {
             <Airplay size={14} />
             AirPlay
             <span className={`protocol-dot ${state.airplay.status}`} />
+          </span>
+          <span className="protocol-divider" />
+          <span title={state.android?.detail}>
+            <Cast size={14} />
+            Android LAN
+            <span className={`protocol-dot ${state.android?.status}`} />
           </span>
           <span className="protocol-divider" />
           <span title={state.miracast.detail}>

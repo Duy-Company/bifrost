@@ -43,7 +43,7 @@ svg {
   background: radial-gradient(ellipse at 50% 32%, #f3fbff 0, #fff 66%);
 }
 .welcome-header {
-  height: 77px;
+  height: 66px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,28 +55,13 @@ svg {
   align-items: center;
   gap: 5px;
   color: #263d4b;
-  font-size: 21px;
+  font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.8px;
 }
 .brand .ice-bolt {
   width: 28px;
   height: 38px;
-}
-.hide-button {
-  height: 31px;
-  width: 31px;
-  display: grid;
-  place-items: center;
-  border: 1px solid #edf3f7;
-  border-radius: 7px;
-  color: #a6b8c4;
-  background: #fff9;
-  transition: background 0.15s;
-}
-.hide-button:hover {
-  background: #edf8fe;
-  color: #3a9fc9;
 }
 .welcome-center {
   position: relative;
@@ -85,20 +70,20 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 35px;
+  padding-bottom: 16px;
   text-align: center;
 }
 .sculpture {
-  height: 235px;
-  width: 400px;
+  height: 132px;
+  width: 330px;
   position: relative;
   display: grid;
   place-items: center;
-  margin: 0 0 14px;
+  margin: 0 0 6px;
 }
 .sculpture > .ice-bolt {
-  height: 223px;
-  width: 182px;
+  height: 132px;
+  width: 108px;
   position: relative;
   z-index: 2;
   transform: rotate(6deg);
@@ -113,18 +98,18 @@ svg {
   transform: translate(-50%, -50%);
 }
 .orbit.one {
-  width: 203px;
-  height: 203px;
+  width: 156px;
+  height: 156px;
 }
 .orbit.two {
-  width: 307px;
-  height: 307px;
+  width: 228px;
+  height: 228px;
   border-style: dashed;
   opacity: 0.8;
 }
 .orbit.three {
-  width: 410px;
-  height: 410px;
+  width: 310px;
+  height: 310px;
   opacity: 0.45;
 }
 .ice-glow {
@@ -150,19 +135,19 @@ svg {
   bottom: 32px;
 }
 .eyebrow {
-  font-size: 7px;
-  letter-spacing: 2.3px;
-  color: #91acbd;
-  font-weight: 550;
-  margin-top: 12px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #526c7f;
+  font-weight: 600;
+  margin-top: 6px;
   position: relative;
 }
 h1 {
-  font-size: 43px;
-  font-weight: 550;
+  font-size: 46px;
+  font-weight: 600;
   letter-spacing: -1.9px;
   line-height: 1.15;
-  margin: 19px 0 14px;
+  margin: 16px 0 12px;
   color: #294354;
   position: relative;
 }
@@ -172,10 +157,10 @@ h1 span {
   -webkit-text-fill-color: transparent;
 }
 .welcome-center > p {
-  font-size: 12px;
-  color: #a3b3bf;
+  font-size: 15px;
+  color: #536f83;
   letter-spacing: 0.12px;
-  margin: 0 0 25px;
+  margin: 0 0 18px;
 }
 .receiver-name {
   display: flex;
@@ -184,9 +169,9 @@ h1 span {
   border: 1px solid #e4f0f7;
   border-radius: 20px;
   background: #f8fcff;
-  font-size: 11px;
+  font-size: 14px;
   padding: 8px 13px;
-  color: #7399ae;
+  color: #426f88;
   min-width: 115px;
   justify-content: center;
   letter-spacing: 0.2px;
@@ -217,14 +202,14 @@ h1 span {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  color: #a9bac5;
-  gap: 20px;
+  color: #526b7c;
+  gap: 12px;
 }
 .protocols {
   display: flex;
   gap: 13px;
   align-items: center;
-  font-size: 9px;
+  font-size: 12px;
 }
 .protocols > span {
   display: flex;
@@ -254,19 +239,16 @@ h1 span {
   background: #e4edf3;
 }
 .receiver-status {
-  font-size: 9px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #9ab0be;
+  font-size: 12px;
+  color: #526b7c;
 }
 .version {
   display: flex;
   gap: 6px;
   align-items: center;
-  font-size: 7px;
-  letter-spacing: 1.7px;
-  color: #afc3cf;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #708899;
 }
 .stream {
   background: #080b0e;
@@ -284,31 +266,6 @@ h1 span {
   object-fit: contain;
   display: block;
 }
-.fullscreen-button {
-  position: absolute;
-  bottom: 20px;
-  right: 22px;
-  width: 39px;
-  height: 37px;
-  border-radius: 7px;
-  border: 1px solid #ffffff29;
-  background: #141d28a6;
-  color: #e4edf4;
-  opacity: 0.35;
-  transition:
-    opacity 0.2s,
-    background 0.2s;
-  display: grid;
-  place-items: center;
-  backdrop-filter: blur(12px);
-}
-.stream:hover .fullscreen-button,
-.fullscreen-button:focus-visible {
-  opacity: 1;
-}
-.fullscreen-button:hover {
-  background: #25415ad9;
-}
 @keyframes float {
   50% {
     transform: translateY(-7px) rotate(3deg);
@@ -319,51 +276,24 @@ h1 span {
     opacity: 0.35;
   }
 }
-@media (max-height: 670px) {
-  .welcome-header {
-    height: 65px;
-  }
-  .sculpture {
-    height: 180px;
-    margin-bottom: 7px;
-  }
-  .sculpture > .ice-bolt {
-    height: 183px;
-    width: 150px;
-  }
-  .orbit.one {
-    width: 170px;
-    height: 170px;
-  }
-  .orbit.two {
-    width: 250px;
-    height: 250px;
-  }
-  .orbit.three {
-    width: 340px;
-    height: 340px;
-  }
-  .eyebrow {
-    margin-top: 8px;
-    font-size: 6px;
-  }
-  h1 {
-    font-size: 36px;
-    margin: 16px 0 12px;
-  }
-  .welcome-center > p {
-    margin-bottom: 20px;
-  }
-  .welcome-center {
-    padding-bottom: 24px;
-  }
-  .welcome-footer {
-    min-height: 51px;
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+@media (max-width: 660px) {
+  h1 {
+    font-size: 42px;
+  }
+  .welcome-footer {
+    margin: 0 24px;
+  }
+  .version {
+    display: none;
+  }
+  .welcome-header {
+    padding: 0 28px;
   }
 }

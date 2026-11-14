@@ -5,11 +5,12 @@ import { existsSync } from 'node:fs'
 import { mkdir, appendFile, readFile } from 'node:fs/promises'
 import { join, delimiter } from 'node:path'
 import { hostname } from 'node:os'
-import { JpegParser } from './jpeg'
+import { PngParser } from './png'
+import { airplayArgs, type VideoProfile } from './video-profile'
 import type { ReceiverState } from '../shared/types'
 export class Receiver extends EventEmitter {
   readonly state: ReceiverState = {
-    name: `Bifrost - ${hostname()}`,
+    name: hostname(),
     platform: process.platform,
     airplay: { status: 'starting' },
     miracast: { status: 'starting' },
@@ -18,7 +19,8 @@ export class Receiver extends EventEmitter {
   private server?: Server
   private engine?: ChildProcess
   private miracast?: ChildProcess
-  private socket?: Socket
+  private sockets = new Set<Socket>()
+  private activeSocket?: Socket
   private stopping = false
   private restarting = false
   private monitor?: ReturnType<typeof setInterval>
@@ -27,7 +29,8 @@ export class Receiver extends EventEmitter {
   constructor(
     private runtime: string,
     private data: string,
-    private windowsScript: string
+    private windowsScript: string,
+    private profile: VideoProfile = { width: 1920, height: 1080, fps: 60, hevc: false }
   ) {
     super()
   }
@@ -75,9 +78,9 @@ export class Receiver extends EventEmitter {
         socket.destroy()
         return
       }
-      this.socket?.destroy()
-      this.socket = socket
-      const parser = new JpegParser((frame) => {
+      this.sockets.add(socket)
+      const parser = new PngParser((frame) => {
+        this.activeSocket = socket
         if (!this.state.streaming) {
           this.state.streaming = true
           this.publish()
@@ -97,8 +100,9 @@ export class Receiver extends EventEmitter {
         void this.log(error.message)
       })
       socket.on('close', () => {
-        if (this.socket === socket) {
-          this.socket = undefined
+        this.sockets.delete(socket)
+        if (this.activeSocket === socket) {
+          this.activeSocket = undefined
           this.endStream()
         }
       })
@@ -116,24 +120,22 @@ export class Receiver extends EventEmitter {
       })
     })
     const port = (this.server.address() as { port: number }).port
-    const sink = `videoconvert ! jpegenc quality=85 ! tcpclientsink host=127.0.0.1 port=${port} sync=false`
-    this.engine = spawn(
-      executable,
-      ['-n', this.state.name, '-nh', '-nofreeze', '-vs', sink, '-p', '7000'],
-      {
-        cwd: join(this.runtime, 'bin'),
-        windowsHide: true,
-        env: {
-          ...process.env,
-          PATH: `${join(this.runtime, 'bin')}${delimiter}${process.env.PATH || ''}`,
-          GST_PLUGIN_PATH: join(this.runtime, 'lib/gstreamer-1.0'),
-          GST_PLUGIN_SYSTEM_PATH: '',
-          GST_REGISTRY: join(this.data, 'gstreamer-registry.bin'),
-          GST_REGISTRY_FORK: 'no'
-        },
-        stdio: ['ignore', 'pipe', 'pipe']
-      }
+    await this.log(
+      `AirPlay video: ${this.profile.width}x${this.profile.height}, max ${this.profile.fps} fps, lossless PNG transport, HEVC ${this.profile.hevc}`
     )
+    this.engine = spawn(executable, airplayArgs(this.state.name, port, this.profile), {
+      cwd: join(this.runtime, 'bin'),
+      windowsHide: true,
+      env: {
+        ...process.env,
+        PATH: `${join(this.runtime, 'bin')}${delimiter}${process.env.PATH || ''}`,
+        GST_PLUGIN_PATH: join(this.runtime, 'lib/gstreamer-1.0'),
+        GST_PLUGIN_SYSTEM_PATH: '',
+        GST_REGISTRY: join(this.data, 'gstreamer-registry.bin'),
+        GST_REGISTRY_FORK: 'no'
+      },
+      stdio: ['ignore', 'pipe', 'pipe']
+    })
     this.lastLog = ''
     const output = (data: Buffer): void => {
       const line = data.toString()
@@ -219,6 +221,7 @@ export class Receiver extends EventEmitter {
           const message = JSON.parse(line)
           if (['starting', 'ready', 'unavailable', 'error'].includes(message.status)) {
             this.state.miracast = message
+            void this.log(`Miracast: ${message.status}: ${message.detail || ''}`)
             this.publish()
           }
         } catch {
@@ -256,7 +259,9 @@ export class Receiver extends EventEmitter {
     this.generation++
     if (this.monitor) clearInterval(this.monitor)
     this.engine?.kill()
-    this.socket?.destroy()
+    for (const socket of this.sockets) socket.destroy()
+    this.sockets.clear()
+    this.activeSocket = undefined
     this.server?.close()
     this.endStream()
     await new Promise((resolve) => setTimeout(resolve, 500))
@@ -275,7 +280,9 @@ export class Receiver extends EventEmitter {
     if (this.monitor) clearInterval(this.monitor)
     this.engine?.kill()
     this.miracast?.stdin?.end('stop\n')
-    this.socket?.destroy()
+    for (const socket of this.sockets) socket.destroy()
+    this.sockets.clear()
+    this.activeSocket = undefined
     this.server?.close()
     this.endStream()
   }
