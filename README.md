@@ -4,6 +4,8 @@ A quiet, tray-based wireless screen receiver for Windows. Electron, TypeScript a
 
 The main window is an introduction only. Closing it keeps the receiver running in the system tray. AirPlay sessions open a separate native-framed stream window with minimize, maximize, close and a full-screen button (F11 / Esc). There are no onboarding flows, device setup screens, USB tools or tutorials in the application.
 
+[Download Windows v1.0.1](https://github.com/Duy-Company/bifrost/releases/tag/v1.0.1)
+
 ## Receiver architecture
 
 - **AirPlay:** a bundled UxPlay native Windows engine advertises Bifrost on the local network, handles AirPlay authentication/decryption and audio, and sends decoded JPEG frames through a loopback-only TCP sink. Electron opens the stream window on the first actual video frame. Closing the stream restarts the AirPlay receiver, ending the sender session.

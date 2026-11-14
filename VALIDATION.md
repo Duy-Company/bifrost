@@ -1,26 +1,32 @@
-# Validation — Bifrost Windows receiver
+# Validation — Bifrost 1.0.1
 
-Date: 2026-11-14. Build host: macOS Apple Silicon.
+Date: 2026-11-14. Source/build host: macOS Apple Silicon; native runtime checks: GitHub-hosted Windows x64.
 
 Passed:
 
 - TypeScript check and production Electron/React bundles.
-- Three JPEG transport tests, including every possible TCP split, bytewise input, marker fragmentation and bounded incomplete frames.
-- Electron UI smoke test: English-only introductory screen, no USB/setup/tutorial screens, native minimize/maximize/fullscreen capability, close-to-tray and reopening the same window.
-- Honest unsupported-platform state on macOS; the UI does not report a running Windows receiver on the build host.
-- UxPlay cross-compiled to PE32+ Windows x86-64 with embedded mDNS. The source commit and build dependency checksums are pinned.
-- All 147 packaged executable/DLL/plugin files passed checksum validation; their non-system PE imports resolve inside the receiver bundle.
+- Three JPEG transport tests: every TCP split, bytewise marker fragmentation and bounded incomplete frames.
+- Electron UI smoke test: English introduction only, native window controls, close-to-tray and reopening the same window.
+- UxPlay cross-compiled from pinned source with embedded mDNS; all 148 packaged executable/DLL/plugin checksums and non-system PE imports verified.
+- Windows runner launched the packaged Bifrost application. Its bundled AirPlay service returned `200` and a binary plist from `/info`.
+- A separate Windows runner downloaded the public v1.0.1 ZIP, launched it, and observed the actual packaged updater check GitHub Releases and confirm that 1.0.1 is current.
+- Installer size/SHA512, update blockmap and embedded GitHub provider validated by the release build.
 
-Not verified here:
+Evidence:
 
-- Running the Windows executable, Windows Firewall behavior or Windows installer behavior.
-- Discovery and actual AirPlay streaming from a physical Mac/iPhone/iPad to a Windows host.
-- Windows Wireless Display activation, supported-driver negotiation, Smart View/Miracast discovery and native streaming on Windows hardware.
+- [Release build and Windows validation](https://github.com/Duy-Company/bifrost/actions/runs/43595782301).
+- [Public updater check on Windows](https://github.com/Duy-Company/bifrost/actions/runs/43596301058).
+- [Machine-readable result](https://github.com/Duy-Company/bifrost/releases/download/v1.0.1/windows-validation.json).
 
-The earlier USB/ADB implementation and its Android emulator test are superseded by this receiver architecture. Those results are not evidence that the wireless protocols work on Windows.
+Still unverified:
 
-Known boundaries:
+- Physical Mac/iPhone/iPad discovery, pairing and actual AirPlay screen/audio transmission to Windows.
+- Miracast / Smart View with real compatible Windows Wi-Fi/display hardware.
+- Installing through the NSIS wizard and upgrading an older installed version to a newer version.
 
-- Miracast is delegated to Windows Wireless Display, including its stream window and fullscreen behavior. The OS feature and compatible Wi-Fi/display drivers must exist. Bifrost reports unavailable if the OS cannot listen; it does not install features or change system projection policy.
-- Google Cast/Chromecast is not implemented. Android menus that only support Google Cast are not compatible with Miracast.
-- The Windows build is unsigned; no public release or notarization/signing service was used.
+Boundaries:
+
+- Miracast delegates to Windows Wireless Display, including its stream window and fullscreen behavior. The OS feature and compatible drivers must exist. No OS feature or projection-policy settings are silently changed.
+- Google Cast/Chromecast is not implemented.
+- The Windows installer is unsigned.
+- Earlier USB/ADB emulator evidence is superseded and is not evidence for these wireless protocols.
