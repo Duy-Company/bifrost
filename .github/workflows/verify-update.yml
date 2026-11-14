@@ -1,0 +1,30 @@
+name: Verify public Windows update
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+      - name: Download the public release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download -R Duy-Company/bifrost --pattern 'Bifrost-*-x64.zip' --dir artifacts
+      - name: Extract app
+        shell: pwsh
+        run: |
+          $archive = Get-ChildItem artifacts/Bifrost-*-x64.zip | Select-Object -First 1
+          Expand-Archive $archive.FullName -DestinationPath packaged
+      - name: Check receiver and actual updater request
+        run: node scripts/test-windows-receiver.mjs packaged --updates
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: public-update-validation
+          path: windows-validation.json
+          if-no-files-found: ignore

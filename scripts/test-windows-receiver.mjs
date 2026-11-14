@@ -75,6 +75,17 @@ try {
     if (createHash('sha256').update(bytes).digest('hex') !== file.sha256)
       throw new Error('Bundled receiver corruption: ' + file.path)
   }
+  const checkUpdates = process.argv.includes('--updates')
+  if (checkUpdates) {
+    const pattern = /Update for version .* is not available \(latest version:/
+    for (let attempt = 0; attempt < 90 && !pattern.test(log); attempt++)
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+    if (!pattern.test(log))
+      throw new Error('The packaged updater did not confirm the public release feed. ' + log)
+    console.log(
+      'PASS: the packaged Windows updater checked GitHub Releases and confirmed the installed version is current.'
+    )
+  }
   await writeFile(
     'windows-validation.json',
     JSON.stringify(
@@ -86,6 +97,7 @@ try {
         binaryPlist: true,
         nativeFiles: manifest.files.length,
         validatedAt: new Date().toISOString(),
+        publicUpdateCheckPassed: checkUpdates,
         physicalAirPlayTested: false,
         physicalMiracastTested: false
       },
