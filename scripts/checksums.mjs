@@ -4,7 +4,9 @@ const { version } = JSON.parse(await readFile('package.json', 'utf8'))
 const files = (await readdir('dist'))
   .filter(
     (n) =>
-      n === 'latest.yml' || (n.startsWith(`Bifrost-${version}-`) && /\.(exe|zip|blockmap)$/.test(n))
+      n === 'latest.yml' ||
+      n === 'Bifrost-Sender-test.apk' ||
+      (n.startsWith(`Bifrost-${version}-`) && /\.(exe|zip|blockmap)$/.test(n))
   )
   .sort()
 await writeFile(

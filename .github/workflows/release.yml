@@ -6,6 +6,19 @@ on:
 permissions:
   contents: read
 jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+      - name: Build Android companion test APK
+        run: JAVA_HOME="$JAVA_HOME_17_X64" node scripts/build-android.mjs
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: android-sender
+          path: dist/test/Bifrost-Sender-test.apk
   build:
     runs-on: macos-15
     steps:
@@ -62,7 +75,7 @@ jobs:
           if-no-files-found: ignore
   publish:
     if: startsWith(github.ref, 'refs/tags/v')
-    needs: [build, windows-validation]
+    needs: [build, windows-validation, android]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -76,6 +89,11 @@ jobs:
         with:
           name: windows-validation
           path: dist
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          name: android-sender
+          path: dist
+      - run: node scripts/checksums.mjs
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -84,5 +102,5 @@ jobs:
           gh release create "$RELEASE_TAG"
           --verify-tag --title "Bifrost $RELEASE_TAG"
           --notes-file RELEASE_NOTES.md
-          dist/*.exe dist/*.zip dist/*.blockmap
+          dist/*.exe dist/*.zip dist/*.blockmap dist/*.apk
           dist/latest.yml dist/SHA256SUMS.txt dist/windows-validation.json

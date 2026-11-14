@@ -2,7 +2,7 @@ node_modules/
 out/
 dist/
 vendor/
-artifacts/*.png
+artifacts/
 .DS_Store
 resources/receiver/bin/
 resources/receiver/lib/

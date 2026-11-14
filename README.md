@@ -4,7 +4,7 @@ A quiet, tray-based wireless screen receiver for Windows. Electron, TypeScript a
 
 The main window is an introduction only. Closing it keeps the receiver running in the system tray. AirPlay and Android LAN sessions open a separate native-framed stream window with OS minimize, maximize and close buttons. F11 / Esc enters and leaves true fullscreen. There are no custom caption or fullscreen buttons or tutorials in the application.
 
-[Download Windows v1.0.1](https://github.com/Duy-Company/bifrost/releases/tag/v1.0.1)
+[Download Windows v1.0.2 and Android companion](https://github.com/Duy-Company/bifrost/releases/tag/v1.0.2)
 
 ## Receiver architecture
 
@@ -42,4 +42,4 @@ Installed Windows builds check the public `Duy-Company/bifrost` GitHub Releases 
 
 A `v*` tag runs the Windows release workflow: build the native engine from pinned source, package the app/update feed, verify installer hashes, start the packaged application on a Windows runner and probe its AirPlay `/info` endpoint, then publish the installer, ZIP, blockmap and `latest.yml`. Physical sender and Miracast hardware tests remain separate.
 
-The current changes are **1.0.2-test.1**, not a published release. The `Test builds (no release)` workflow has read-only repository permissions and only uploads CI artifacts. No updater feed is published. Build the Android test APK with `node scripts/build-android.mjs` (Android SDK, Java 17 and Gradle 8.13 required; `BIFROST_GRADLE` can specify its executable). `node scripts/test-android.mjs` exercises an authorized local Android emulator and Electron together.
+Version **1.0.2** includes the Android test companion APK. Build it with `node scripts/build-android.mjs` (Android SDK and Java 17 required; the Gradle wrapper downloads Gradle 8.13 if no local installation is available). The `Test builds (no release)` workflow has read-only repository permissions and only uploads CI artifacts. `node scripts/test-android.mjs` exercises an authorized local Android emulator and Electron together.
