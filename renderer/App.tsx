@@ -21,9 +21,10 @@ function Stream() {
     const draw = (frame: ImageBitmap | VideoFrame, width: number, height: number) => {
       const target = canvas.current
       if (active && target) {
-        if (target.width !== width || target.height !== height) {
+        if (target.width !== width || target.height !== height || !target.dataset.frames) {
           target.width = width
           target.height = height
+          window.bifrost.videoSize(width, height)
         }
         context.drawImage(frame, 0, 0)
         target.dataset.frames = String(Number(target.dataset.frames || 0) + 1)

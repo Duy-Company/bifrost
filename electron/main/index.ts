@@ -14,6 +14,7 @@ import { join } from 'node:path'
 import { Receiver } from '../receiver'
 import { LanReceiver } from '../lan'
 import { videoProfile } from '../video-profile'
+import { fitStream } from '../stream-size'
 import type { EncodedFrame, ImageFrame } from '../../shared/types'
 import { UpdateController } from '../updater'
 let welcome: BrowserWindow | null = null
@@ -27,6 +28,7 @@ let quitting = false
 let blocker: number | undefined
 let lastFrame: ImageFrame | undefined
 let lastConfig: EncodedFrame | undefined
+let streamSize: { width: number; height: number } | undefined
 const assets = () => (app.isPackaged ? process.resourcesPath : join(app.getAppPath(), 'resources'))
 function currentState() {
   return {
@@ -59,6 +61,7 @@ function baseWindow(options: Electron.BrowserWindowConstructorOptions): BrowserW
   window.setMenu(null)
   window.webContents.setWindowOpenHandler(() => ({ action: 'deny' }))
   window.webContents.on('will-navigate', (event) => event.preventDefault())
+  window.webContents.on('page-title-updated', (event) => event.preventDefault())
   window.webContents.session.setPermissionRequestHandler((_, __, callback) => callback(false))
   window.webContents.on('did-finish-load', () =>
     window.webContents.send('receiver:state', currentState())
@@ -102,8 +105,8 @@ function openStream(title = 'AirPlay'): void {
   stream = baseWindow({
     width: 1120,
     height: 760,
-    minWidth: 360,
-    minHeight: 260,
+    minWidth: 160,
+    minHeight: 160,
     title: `Bifrost — ${title}`,
     backgroundColor: '#080b0e',
     show: false,
@@ -114,6 +117,8 @@ function openStream(title = 'AirPlay'): void {
   })
   load(stream, 'stream')
   stream.once('ready-to-show', () => stream?.show())
+  stream.on('leave-full-screen', fitStreamWindow)
+  stream.on('unmaximize', fitStreamWindow)
   stream.webContents.on('before-input-event', (event, input) => {
     if (input.type !== 'keyDown') return
     if (input.key === 'F11') {
@@ -126,12 +131,43 @@ function openStream(title = 'AirPlay'): void {
   })
   stream.on('closed', () => {
     stream = null
+    streamSize = undefined
     if (!quitting) {
       if (active === 'android') lan.disconnect()
       else if (receiver.state.streaming) void receiver.disconnect()
     }
   })
   if (blocker === undefined) blocker = powerSaveBlocker.start('prevent-display-sleep')
+}
+function fitStreamWindow(): void {
+  if (!stream || !streamSize || stream.isFullScreen() || stream.isMaximized()) return
+  const bounds = stream.getBounds(),
+    content = stream.getContentBounds()
+  const chrome = { width: bounds.width - content.width, height: bounds.height - content.height }
+  const display = screen.getDisplayMatching(bounds),
+    area = display.workArea
+  const size = fitStream(
+    streamSize.width,
+    streamSize.height,
+    area.width - chrome.width - 32,
+    area.height - chrome.height - 32,
+    display.scaleFactor
+  )
+  const width = size.width + chrome.width,
+    height = size.height + chrome.height
+  stream.setAspectRatio(streamSize.width / streamSize.height)
+  stream.setBounds({
+    width,
+    height,
+    x: Math.max(
+      area.x,
+      Math.min(area.x + area.width - width, Math.round(bounds.x + (bounds.width - width) / 2))
+    ),
+    y: Math.max(
+      area.y,
+      Math.min(area.y + area.height - height, Math.round(bounds.y + (bounds.height - height) / 2))
+    )
+  })
 }
 function refreshTray(): void {
   if (!tray) return
@@ -261,6 +297,20 @@ else {
         refreshTray()
       })
       ipcMain.handle('receiver:state', () => currentState())
+      ipcMain.on('receiver:video-size', (event, width: number, height: number) => {
+        if (
+          event.sender !== stream?.webContents ||
+          !Number.isInteger(width) ||
+          !Number.isInteger(height) ||
+          width < 1 ||
+          height < 1 ||
+          width > 8192 ||
+          height > 8192
+        )
+          return
+        streamSize = { width, height }
+        fitStreamWindow()
+      })
       ipcMain.on('receiver:subscribe', (event) => {
         if (stream?.webContents !== event.sender) return
         if (active === 'android') {

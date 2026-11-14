@@ -6,7 +6,7 @@ import { WebSocket } from 'ws'
 import { LanReceiver } from '../electron/lan'
 test('LAN handshake, ownership, frames, keyframe requests and disconnect', async () => {
   let occupied = false
-  const receiver = new LanReceiver(() => occupied)
+  const receiver = new LanReceiver(() => occupied, false)
   await receiver.start()
   const endpoint = `http://127.0.0.1:${receiver.port}`
   let client: WebSocket | undefined

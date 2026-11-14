@@ -26,7 +26,10 @@ export class LanReceiver extends EventEmitter {
   private responder?: Responder
   private service?: CiaoService
   private client?: WebSocket
-  constructor(private busy: () => boolean) {
+  constructor(
+    private busy: () => boolean,
+    private discovery = true
+  ) {
     super()
   }
   addresses(): string[] {
@@ -86,6 +89,8 @@ export class LanReceiver extends EventEmitter {
       })
     })
     this.port = (this.server.address() as { port: number }).port
+    this.publish({ status: 'ready', detail: this.addresses().join(', ') })
+    if (!this.discovery) return
     this.responder = getResponder()
     this.service = this.responder.createService({
       name: hostname(),
@@ -94,7 +99,6 @@ export class LanReceiver extends EventEmitter {
       port: this.port,
       txt: { protocol: 'bifrost.h264.v1', name: hostname() }
     })
-    this.publish({ status: 'ready', detail: this.addresses().join(', ') })
     void this.service.advertise().catch((error) => {
       this.publish({
         status: 'ready',

@@ -14,7 +14,7 @@ if (!gradle) {
       if (existsSync(candidate)) gradle = candidate
     }
 }
-if (!gradle) throw new Error('Set BIFROST_GRADLE to Gradle 8.13 or newer.')
+if (!gradle) gradle = resolve('android-sender/gradlew')
 await mkdir('vendor/android-gradle', { recursive: true })
 execFileSync(
   gradle,

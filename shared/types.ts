@@ -26,6 +26,7 @@ export interface ImageFrame {
 export type VideoFramePacket = EncodedFrame | ImageFrame
 export interface ReceiverBridge {
   state(): Promise<ReceiverState>
+  videoSize(width: number, height: number): void
   onState(callback: (state: ReceiverState) => void): () => void
   onFrame(callback: (frame: VideoFramePacket) => void): () => void
 }

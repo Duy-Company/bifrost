@@ -72,6 +72,18 @@ try {
     .locator('canvas')
     .evaluate((c) => ({ width: c.width, height: c.height, frames: Number(c.dataset.frames) }))
   expect(portrait.height).toBeGreaterThan(portrait.width)
+  const contentSize = () =>
+    app.evaluate(({ BrowserWindow }) =>
+      BrowserWindow.getAllWindows()
+        .find((w) => w.webContents.getURL().includes('view=stream'))
+        .getContentSize()
+    )
+  const portraitWindow = await contentSize()
+  expect(
+    Math.abs(portraitWindow[0] / portraitWindow[1] - portrait.width / portrait.height)
+  ).toBeLessThan(0.005)
+  console.log('Portrait stream:', portrait)
+  adb('shell', 'am', 'start', '-W', '-n', 'com.bifrost.sender/.MainActivity')
   adb('shell', 'settings', 'put', 'system', 'user_rotation', '1')
   await stream.waitForFunction(
     () => {
@@ -83,15 +95,24 @@ try {
   const landscape = await stream
     .locator('canvas')
     .evaluate((c) => ({ width: c.width, height: c.height, frames: Number(c.dataset.frames) }))
+  await expect
+    .poll(async () => {
+      const size = await contentSize()
+      return Math.abs(size[0] / size[1] - landscape.width / landscape.height)
+    })
+    .toBeLessThan(0.005)
+  const landscapeWindow = await contentSize()
   await stream.screenshot({ path: 'artifacts/android-stream.png' })
   await stream.keyboard.press('F11')
-  expect(
-    await app.evaluate(({ BrowserWindow }) =>
-      BrowserWindow.getAllWindows()
-        .find((w) => w.getTitle().includes(' — '))
-        .isFullScreen()
+  await expect
+    .poll(() =>
+      app.evaluate(({ BrowserWindow }) =>
+        BrowserWindow.getAllWindows()
+          .find((w) => w.webContents.getURL().includes('view=stream'))
+          .isFullScreen()
+      )
     )
-  ).toBe(true)
+    .toBe(true)
   await stream.keyboard.press('Escape')
   await stream.close()
   await expect
@@ -104,6 +125,8 @@ try {
     name: state.name,
     portrait,
     landscape,
+    portraitWindow,
+    landscapeWindow,
     wholeScreenChanged: true,
     nativeCloseDisconnects: true,
     errors

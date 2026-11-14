@@ -3,6 +3,13 @@ import assert from 'node:assert/strict'
 import { PngParser } from '../electron/png'
 import { videoProfile, airplayArgs } from '../electron/video-profile'
 import { androidPacket } from '../electron/lan'
+import { fitStream } from '../electron/stream-size'
+test('stream size follows device pixels, preserves portrait and landscape, and fits the display', () => {
+  assert.deepEqual(fitStream(1080, 2400, 1888, 1000, 1), { width: 450, height: 1000 })
+  assert.deepEqual(fitStream(2400, 1080, 1888, 1000, 1), { width: 1888, height: 850 })
+  assert.deepEqual(fitStream(1920, 1080, 2000, 1400, 2), { width: 960, height: 540 })
+  assert.deepEqual(fitStream(640, 480, 1888, 1000, 1), { width: 640, height: 480 })
+})
 const signature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])
 function chunk(type: string, data: Buffer) {
   const h = Buffer.alloc(8)
