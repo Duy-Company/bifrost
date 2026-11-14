@@ -1,0 +1,2114 @@
+{
+  "uxplay": {
+    "repo": "FDH2/UxPlay",
+    "commit": "05b0275cb1b726592700e47a6e0307544b3d3a52",
+    "sha256": "e9698b16b2be25d7cbf314e50f3c6f762de5886a6c7de093796fcec6b5305041"
+  },
+  "toolchain": {
+    "version": "20261104",
+    "url": "https://github.com/mstorsjo/llvm-mingw/releases/download/20261104/llvm-mingw-20261104-ucrt-macos-universal.tar.xz",
+    "sha256": "66cbd5178c4a71b0d473e68ede172f8eb7d15d023e67f39201d0a69e21f6bf3c"
+  },
+  "packages": [
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gstreamer-1.28.9-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gstreamer"
+      ],
+      "CSIZE": [
+        "2439347"
+      ],
+      "SHA256SUM": [
+        "6bed23fb42240048523179c55f254aab1cab196c39cab013e08d7526673a131a"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-cc-libs-16.2.0-7-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-cc-libs"
+      ],
+      "CSIZE": [
+        "2359"
+      ],
+      "SHA256SUM": [
+        "bf7dea230d49527d4634cb959a9e500b0f15f44e8ccfc690b99cba2299f17797"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libgcc-16.2.0-7-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libgcc"
+      ],
+      "CSIZE": [
+        "77135"
+      ],
+      "SHA256SUM": [
+        "bc0ae31c582e0847964b4c8c4b55bb2404a9b7ddce7ebf0b176b6693b76e0c62"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libwinpthread-14.0.0.r598.ge3d18511f-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libwinpthread"
+      ],
+      "CSIZE": [
+        "34470"
+      ],
+      "SHA256SUM": [
+        "c35d6be83d141c8cfbb61f1637dd4b53aac8f5562d766aa26d0741c40bad4e4d"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libstdc++-16.2.0-7-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libstdc++"
+      ],
+      "CSIZE": [
+        "795665"
+      ],
+      "SHA256SUM": [
+        "4dd4b216b0e92ffa160127dd50620372609e98cb219ff1c5dcb9b3fbfe153253"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-tzdata-2026f-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-tzdata"
+      ],
+      "CSIZE": [
+        "225917"
+      ],
+      "SHA256SUM": [
+        "dd8af2f770b3241d8c299343c12cd4d7e3b94c47195608158d28788a01575323"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gettext-runtime-1.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gettext-runtime"
+      ],
+      "CSIZE": [
+        "417977"
+      ],
+      "SHA256SUM": [
+        "ba693dda4ac375af76ce481ff3a6e7481286546cc7dc6d56c7021dae34084157"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libiconv-1.19.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libiconv"
+      ],
+      "CSIZE": [
+        "742799"
+      ],
+      "SHA256SUM": [
+        "8a45dc317a285a036bddd79e01505d67b79e44ff49fc3f6e7177a5ea98d098cf"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-glib2-2.90.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-glib2"
+      ],
+      "CSIZE": [
+        "5467018"
+      ],
+      "SHA256SUM": [
+        "9a7826349279bcca0c935b01880d812be9de9609aef2205be68fd7a6128c1695"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libffi-3.8.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libffi"
+      ],
+      "CSIZE": [
+        "51576"
+      ],
+      "SHA256SUM": [
+        "99ad12f4ecfa00a889ef9c5c0188592368a5bac109d0c508ce4e04f29ea95a76"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-pcre2-10.49-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-pcre2"
+      ],
+      "CSIZE": [
+        "1444896"
+      ],
+      "SHA256SUM": [
+        "44ca7a873b71f1e6ce2b7b671d60bc067249009bd6c732733caa822153ebc4f9"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-bzip2-1.0.8-4-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-bzip2"
+      ],
+      "CSIZE": [
+        "94396"
+      ],
+      "SHA256SUM": [
+        "f03a2174034ddd2d96cecd34f617c5f8e2ef86c812b8d2bb3b8875257f2c8bfa"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-wineditline-2.208-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-wineditline"
+      ],
+      "CSIZE": [
+        "61123"
+      ],
+      "SHA256SUM": [
+        "b07b34de1669e16cfd6743691914f5a66ad4013500bbf0e4c7a7644046ae7b1c"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-zlib-1.4-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-zlib"
+      ],
+      "CSIZE": [
+        "889083"
+      ],
+      "SHA256SUM": [
+        "172541cf5e2391a402f092104988699b0163129d22be1d6b4b201bfb84af6fcf"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-python-3.14.10-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-python"
+      ],
+      "CSIZE": [
+        "27924307"
+      ],
+      "SHA256SUM": [
+        "457ae835f6e05e8ae1f43d885843875d3cee1a8e902c9d2f0db924d6fb6a0cbc"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-expat-2.10.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-expat"
+      ],
+      "CSIZE": [
+        "197733"
+      ],
+      "SHA256SUM": [
+        "6e6c3e6d748ef546cd7e691637fb1cdade6183bbccab85056dc04f1f9237009f"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-mpdecimal-4.0.1-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-mpdecimal"
+      ],
+      "CSIZE": [
+        "158639"
+      ],
+      "SHA256SUM": [
+        "abf25c3869ba5e5bc3b69fdeb6cd49b060fc1a64d0d2de10918adeae9630a68d"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-ncurses-6.6-4-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-ncurses"
+      ],
+      "CSIZE": [
+        "1605818"
+      ],
+      "SHA256SUM": [
+        "88331fe78470ef2c5e0280652fee5e10b6dcaa35f8037725c359407f2702309c"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libsystre-1.0.2-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libsystre"
+      ],
+      "CSIZE": [
+        "8603"
+      ],
+      "SHA256SUM": [
+        "62f564b1395d4862db1599b77f6588c32de5c80936845751cf369b31eee1560b"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libtre-0.9.0-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libtre"
+      ],
+      "CSIZE": [
+        "82227"
+      ],
+      "SHA256SUM": [
+        "d50f22545c50d7c0cd584474bba83f0c7a2cd8aab1aed1ad6c1f9c6452f3c4fc"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-openssl-3.6.5-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-openssl"
+      ],
+      "CSIZE": [
+        "8297898"
+      ],
+      "SHA256SUM": [
+        "773e021ebad83f14b5c103db467411e8ff064663e1c7e7f730e2be72f4117064"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-sqlite-3.54.1-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-sqlite"
+      ],
+      "CSIZE": [
+        "2482863"
+      ],
+      "SHA256SUM": [
+        "be8941784d708ddd25b8702b32b194704233edb859ba4e6e6e109a51a3836c10"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-tcl-8.6.18-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-tcl"
+      ],
+      "CSIZE": [
+        "2805892"
+      ],
+      "SHA256SUM": [
+        "0c3a50ea5be8c5190e58a1fdc46c09f8113ad1b855745875646b7a78a02215df"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-tk-8.6.18-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-tk"
+      ],
+      "CSIZE": [
+        "2122449"
+      ],
+      "SHA256SUM": [
+        "bfa011886032962833ddc93ae9b508798ec56625b9093cc6d0ff5c95507c79c6"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-xz-5.8.4-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-xz"
+      ],
+      "CSIZE": [
+        "905211"
+      ],
+      "SHA256SUM": [
+        "a9d771f816d8c0c5bde152ffb27a687ede91079b8e77e5b8297efa3b5a835934"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-zstd-1.5.7-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-zstd"
+      ],
+      "CSIZE": [
+        "668277"
+      ],
+      "SHA256SUM": [
+        "dbdb8427280046a2b41697780aa4c52983b708082b0da4755951dc3bea96ca89"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-python-packaging-26.3-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-python-packaging"
+      ],
+      "CSIZE": [
+        "263600"
+      ],
+      "SHA256SUM": [
+        "b90d1451cfbf015a5334409bd9edf9c61bc0f7b78cac19400b0f92c9279fbaa7"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gst-plugins-base-1.28.9-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gst-plugins-base"
+      ],
+      "CSIZE": [
+        "2659269"
+      ],
+      "SHA256SUM": [
+        "9418fdedcfd4c10a0ab7d76e8e4feb4cc6eb655743112734af19a06dfb3c7b14"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-graphene-1.10.8-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-graphene"
+      ],
+      "CSIZE": [
+        "223025"
+      ],
+      "SHA256SUM": [
+        "4ae49208acf49de84f2abbe9555c2d22f51ab52c1509f5ac8bb5ce7fcaf07d57"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libogg-1.3.6-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libogg"
+      ],
+      "CSIZE": [
+        "216262"
+      ],
+      "SHA256SUM": [
+        "110a34239e8f122da15e041b2601e2f3c6d4c909d738bdf978700601e0f64449"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libtheora-1.2.0-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libtheora"
+      ],
+      "CSIZE": [
+        "351062"
+      ],
+      "SHA256SUM": [
+        "c02d4c2dd88103e1689e4b873b1d1b0f8550378717dcee1a6044f9986b8f99a5"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libpng-1.6.59-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libpng"
+      ],
+      "CSIZE": [
+        "401066"
+      ],
+      "SHA256SUM": [
+        "6cc296f5029220e1a226c4bc50294212b20ab8fcabeb00b5a002667f4a882edc"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libvorbis-1.3.7-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libvorbis"
+      ],
+      "CSIZE": [
+        "367465"
+      ],
+      "SHA256SUM": [
+        "d013d2c7489b175299f9ea8bd9b70cf456337943b0f13e6eb470beb6c3fc251f"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libjpeg-turbo-3.2.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libjpeg-turbo"
+      ],
+      "CSIZE": [
+        "788153"
+      ],
+      "SHA256SUM": [
+        "8eed77c1e0d6de7f8822687f7b1dfa32cda09394806ef67b23399e63de1a92a6"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-opus-1.6.1-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-opus"
+      ],
+      "CSIZE": [
+        "344930"
+      ],
+      "SHA256SUM": [
+        "bb114bcf26225f50f874497ebfd6b8224fff2a20bda3f8ee45cd07ce5f02657b"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-orc-0.4.44-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-orc"
+      ],
+      "CSIZE": [
+        "255963"
+      ],
+      "SHA256SUM": [
+        "f333a8207fbec0178e34d6293e412015c7450e3e73dfa1627279cd922f5d622f"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-pango-1.58.2-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-pango"
+      ],
+      "CSIZE": [
+        "696849"
+      ],
+      "SHA256SUM": [
+        "8d86e4a018ff139b010bf357fa1c9f9030fa32ee195c54ed7e89d8ea701851c8"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-cairo-1.18.6-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-cairo"
+      ],
+      "CSIZE": [
+        "893167"
+      ],
+      "SHA256SUM": [
+        "021c0a4d1df463d08d0cac170818a7cbaccaa5b09ac6edc7948e461cb5a46e85"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-freetype-2.15.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-freetype"
+      ],
+      "CSIZE": [
+        "640235"
+      ],
+      "SHA256SUM": [
+        "a9a691f71d1a553099c54ca666e611abfb2b4ff08dae24f2a5af72e22a7e5feb"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-brotli-1.2.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-brotli"
+      ],
+      "CSIZE": [
+        "448753"
+      ],
+      "SHA256SUM": [
+        "e3257d4303fc0aca4c64f702d4c8cd766a321351c5e61927631c30bfdf2e7536"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-harfbuzz-15.1.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-harfbuzz"
+      ],
+      "CSIZE": [
+        "2792568"
+      ],
+      "SHA256SUM": [
+        "92b72b54ad320508b700e50f48ac6386f056f4dd1cc9ad77696bc3bf036e67f8"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-graphite2-1.3.15-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-graphite2"
+      ],
+      "CSIZE": [
+        "152553"
+      ],
+      "SHA256SUM": [
+        "34ca1f88bff10ef182a6b1c8e5622d5029f13b05748e361af13b552b422ea849"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-fontconfig-2.18.3-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-fontconfig"
+      ],
+      "CSIZE": [
+        "302429"
+      ],
+      "SHA256SUM": [
+        "d0b364f3ee37e3b6f6c136688ce8fa909bb6d8a69df7e08de1aa40870d9e1d60"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-lzo2-2.10-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-lzo2"
+      ],
+      "CSIZE": [
+        "102253"
+      ],
+      "SHA256SUM": [
+        "717c8065996bea51543518a0d3ab46837bf9a990c41886348bd2fa9484ea23f3"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-pixman-0.46.4-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-pixman"
+      ],
+      "CSIZE": [
+        "356199"
+      ],
+      "SHA256SUM": [
+        "4c01b986563d2b5f7ad6fcec2d0ec9915d2f242ddac5eacddc19971964241cc5"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-fribidi-1.0.18-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-fribidi"
+      ],
+      "CSIZE": [
+        "85961"
+      ],
+      "SHA256SUM": [
+        "4837d3626349c617aaa2db3d116f9b7ea208b11644f507a6a83eab36bb3ac920"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libthai-0.1.30-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libthai"
+      ],
+      "CSIZE": [
+        "214246"
+      ],
+      "SHA256SUM": [
+        "c90ebbca3e7b4c34f4b3ffa501ba8d00cdaf6340cff7db3c46d79d5e01ef207c"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libdatrie-0.2.14-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libdatrie"
+      ],
+      "CSIZE": [
+        "80929"
+      ],
+      "SHA256SUM": [
+        "ea92777801ad325278193a362967540752ae37035016df2f6bcee2d89928a195"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-iso-codes-4.20.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-iso-codes"
+      ],
+      "CSIZE": [
+        "3789895"
+      ],
+      "SHA256SUM": [
+        "4e510fda4d64bcadf7d79d76f02f7080e016bf37759b0a5fe5b2e65553e49785"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gst-plugins-good-1.28.9-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gst-plugins-good"
+      ],
+      "CSIZE": [
+        "2207660"
+      ],
+      "SHA256SUM": [
+        "32c5006d8601b921364fdec356643def77366ecc3696f0a9c80ceae171829e37"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-flac-1.5.0-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-flac"
+      ],
+      "CSIZE": [
+        "523215"
+      ],
+      "SHA256SUM": [
+        "28e8637795bd7d80289ddbb582d6ad350b73eac64390b877149717dd3757ad79"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gdk-pixbuf2-2.44.8-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gdk-pixbuf2"
+      ],
+      "CSIZE": [
+        "820387"
+      ],
+      "SHA256SUM": [
+        "aacfe4bdf635b1ad5bd50ffe9b106f9256e5aee567aec37d4fabe142a0353419"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libtiff-4.7.2-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libtiff"
+      ],
+      "CSIZE": [
+        "709209"
+      ],
+      "SHA256SUM": [
+        "258e08a91e6b1703d41730ffe6080c2a40968fe90896b45716c1b41042775076"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-jbigkit-2.1-6-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-jbigkit"
+      ],
+      "CSIZE": [
+        "71553"
+      ],
+      "SHA256SUM": [
+        "9e237d1041350e7436294cfa13d4bd3d1606d1f2a32ade2eb2958b4d4e79b7ad"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-lerc-4.1.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-lerc"
+      ],
+      "CSIZE": [
+        "312118"
+      ],
+      "SHA256SUM": [
+        "c0afbf4832488d67030c6f313349cd814946c9a7bc3ae9fd54524825c9ca055d"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libdeflate-1.26-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libdeflate"
+      ],
+      "CSIZE": [
+        "92465"
+      ],
+      "SHA256SUM": [
+        "17720c77bd01641a3554801cafd71d96fb7fff7427f4cc20ac9f36efb8cb3da0"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libwebp-1.6.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libwebp"
+      ],
+      "CSIZE": [
+        "623411"
+      ],
+      "SHA256SUM": [
+        "34ff8396c403d484c8777ad49ad0fc06dfb94fadf6f14bcf84d50c45bc6fd17e"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-giflib-6.1.3-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-giflib"
+      ],
+      "CSIZE": [
+        "120903"
+      ],
+      "SHA256SUM": [
+        "9e7ac8feb0e2af6e0fce3c8ead1bd7bcaf018661d08033858c1e2657a04f6f1a"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-lame-4.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-lame"
+      ],
+      "CSIZE": [
+        "324810"
+      ],
+      "SHA256SUM": [
+        "01441a4daa1e6a6550f9d80a3ca9edfd4504b3eec3a055c163547d7d55847bc9"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-mpg123-1.33.7-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-mpg123"
+      ],
+      "CSIZE": [
+        "585485"
+      ],
+      "SHA256SUM": [
+        "7d4efa8ab7682476f0b8b048658596e9b64d8115cd9706afbba0a5410792e240"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libcaca-0.99.beta20-8-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libcaca"
+      ],
+      "CSIZE": [
+        "377902"
+      ],
+      "SHA256SUM": [
+        "fd2e0dd4f64179155aee7f6ef814ad1ccf460c775713025ab896e2df4769e712"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libshout-2.4.6-6-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libshout"
+      ],
+      "CSIZE": [
+        "137114"
+      ],
+      "SHA256SUM": [
+        "21a175c3d3a7d5538015218771c6680ac2846d48c13ff194d33dac8dc921bdee"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-speex-1.2.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-speex"
+      ],
+      "CSIZE": [
+        "542036"
+      ],
+      "SHA256SUM": [
+        "bed78c12555879a6463a6585b01fea72746143c0e98d7015ae99b8e9bb8daba4"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-speexdsp-1.2.1-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-speexdsp"
+      ],
+      "CSIZE": [
+        "487391"
+      ],
+      "SHA256SUM": [
+        "397f3e3b7922cc7016c965ba42a67c22372ab8e0c4c144eddd26092a562acbf8"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libsoup3-3.8.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libsoup3"
+      ],
+      "CSIZE": [
+        "619513"
+      ],
+      "SHA256SUM": [
+        "0ad16c3524fcd8a03a14d493b6bba9161c443f1a9e93171057bfa0dbd1c32a4e"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-glib-networking-2.90.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-glib-networking"
+      ],
+      "CSIZE": [
+        "203253"
+      ],
+      "SHA256SUM": [
+        "53654bcc3def83b545f6d7c13cfb81b9be471f476b75fa3fcb6bdac04b2d8bd0"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gnutls-3.8.13-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gnutls"
+      ],
+      "CSIZE": [
+        "2400784"
+      ],
+      "SHA256SUM": [
+        "303da3babd11f545fcac647439298e8559951ce6a1086666faf8ad2a1f708be6"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gmp-6.3.0-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gmp"
+      ],
+      "CSIZE": [
+        "592359"
+      ],
+      "SHA256SUM": [
+        "e82a75968a556484a50084578238a84eb60fb93e34986fd6695c537975bd39ea"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libidn2-2.3.8-5-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libidn2"
+      ],
+      "CSIZE": [
+        "173272"
+      ],
+      "SHA256SUM": [
+        "64d0be239a20c841919f5f3d085c77cb9c631e4ecbfcfb14ba7ca668b5026ebc"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libunistring-1.4.2-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libunistring"
+      ],
+      "CSIZE": [
+        "867265"
+      ],
+      "SHA256SUM": [
+        "e784273da19bbdcc91cbb510b5e27c3ac021b026140734eefcce5ccbd878bd97"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libtasn1-4.21.0-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libtasn1"
+      ],
+      "CSIZE": [
+        "200559"
+      ],
+      "SHA256SUM": [
+        "3aebc3458de49f6c8bc22aabcc9f8eddec643d8d01bd56f683aa1074b0998f6f"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-nettle-4.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-nettle"
+      ],
+      "CSIZE": [
+        "576939"
+      ],
+      "SHA256SUM": [
+        "47b49f1723ef2c75ff3042b6e463910c47cdffa3342e175b6409fb9d630e64ed"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-p11-kit-0.26.6-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-p11-kit"
+      ],
+      "CSIZE": [
+        "668098"
+      ],
+      "SHA256SUM": [
+        "837ec9421987bc663bcac1bdc6bb4d3250e1449bc5cc406cdb769d2a89d6df6f"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gsettings-desktop-schemas-51.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gsettings-desktop-schemas"
+      ],
+      "CSIZE": [
+        "917248"
+      ],
+      "SHA256SUM": [
+        "6ef842a0263ee34f3037fecae210ecfce93d7f17568465d54233a0f17e0c4323"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-adobe-source-code-pro-fonts-2.042u+1.062i+1.026vf-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-adobe-source-code-pro-fonts"
+      ],
+      "CSIZE": [
+        "990276"
+      ],
+      "SHA256SUM": [
+        "711d2e809be6a35ada61cb7fcd57b9605ad1b95e3bd591638c4932059847bc4b"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-cantarell-fonts-0.311-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-cantarell-fonts"
+      ],
+      "CSIZE": [
+        "112761"
+      ],
+      "SHA256SUM": [
+        "3fb8c646b67b2838f2ae306f02b06b1d909fdf69fb0ae6796e7813570aad219f"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libproxy-0.5.12-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libproxy"
+      ],
+      "CSIZE": [
+        "259089"
+      ],
+      "SHA256SUM": [
+        "ebf80a4c84bfeed53c023bbdda4fb514c84b9e433baf3ba6e976de59dea1df74"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-curl-8.23.0-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-curl"
+      ],
+      "CSIZE": [
+        "1786794"
+      ],
+      "SHA256SUM": [
+        "97b90ce58203ca68f24a05b2c06dfe3d52dac176b504a2403bae6a27d81755d5"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libpsl-0.21.5-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libpsl"
+      ],
+      "CSIZE": [
+        "95717"
+      ],
+      "SHA256SUM": [
+        "d96e0bb50ac3f8b6e44a39ea8de8d186f7b08f6938b0676eb69a7ba1f127bcf4"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-ca-certificates-20260816-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-ca-certificates"
+      ],
+      "CSIZE": [
+        "399948"
+      ],
+      "SHA256SUM": [
+        "037d3bf0b4eb004e2b3586baa29e526db70013dfe3118a2a86748acb46ee07b4"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libssh2-1.11.1-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libssh2"
+      ],
+      "CSIZE": [
+        "439143"
+      ],
+      "SHA256SUM": [
+        "24e69bab8912e11aa23f6fbd352446b10aad395fb1e2b83e80edf98acf512b29"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-nghttp2-1.71.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-nghttp2"
+      ],
+      "CSIZE": [
+        "204020"
+      ],
+      "SHA256SUM": [
+        "ce394855ca96785b75ec9b8bf03de29cded23770228131c1dc459f96a2ff087e"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-ngtcp2-1.26.0-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-ngtcp2"
+      ],
+      "CSIZE": [
+        "315623"
+      ],
+      "SHA256SUM": [
+        "6aed53d19c0b5893908e0d1028a286490a767fc340fa4e34e3611e47e11a43fb"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-nghttp3-1.19.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-nghttp3"
+      ],
+      "CSIZE": [
+        "139567"
+      ],
+      "SHA256SUM": [
+        "d2917a08bea179c0de58023d57fe8572f905b90f5d2f8d8798789bedfbbe5634"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-duktape-2.7.0-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-duktape"
+      ],
+      "CSIZE": [
+        "244180"
+      ],
+      "SHA256SUM": [
+        "9321075fef48d29f32aab10df3b70b7e8407a01c702d01b7f4498b4d1c1fcf57"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libvpx-1.17.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libvpx"
+      ],
+      "CSIZE": [
+        "1625301"
+      ],
+      "SHA256SUM": [
+        "8ff6919dbb88ea26ce28d22fd81d6f0d6e200cf56a4dd81ffc2d33124fe98024"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libxml2-2.15.4-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libxml2"
+      ],
+      "CSIZE": [
+        "1003188"
+      ],
+      "SHA256SUM": [
+        "e774c85139c004ce9b4085474d6b3450526c718d2e8c555a87e47adc11f376b1"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-opencore-amr-0.1.6-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-opencore-amr"
+      ],
+      "CSIZE": [
+        "174483"
+      ],
+      "SHA256SUM": [
+        "65c6b5a2795ff12fd1839fa52b59785210ca1c2154fcbb73d7ea39767ea11fc4"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-taglib-2.3.2-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-taglib"
+      ],
+      "CSIZE": [
+        "1009666"
+      ],
+      "SHA256SUM": [
+        "ab9cdfdab5203433e66c92459adf1f5981b0265633a772d845cd6b0128e56f1d"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-twolame-0.4.0-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-twolame"
+      ],
+      "CSIZE": [
+        "122549"
+      ],
+      "SHA256SUM": [
+        "e8094a54e83f34f15b779b383e33f75b65e777912479c0787dacf6d34c366c92"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libsndfile-1.2.2-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libsndfile"
+      ],
+      "CSIZE": [
+        "512025"
+      ],
+      "SHA256SUM": [
+        "a882301af8cb1f645c45b1dcbf9634a9bf5a92af47f0cef95a88e83d3a3f444b"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-wavpack-5.9.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-wavpack"
+      ],
+      "CSIZE": [
+        "588625"
+      ],
+      "SHA256SUM": [
+        "d4edfdc44a6449e3636c150a2ebf513e779176b8173c206f0d1830e0f6c7f17d"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gst-libav-1.28.9-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gst-libav"
+      ],
+      "CSIZE": [
+        "138062"
+      ],
+      "SHA256SUM": [
+        "f17a9ca00491fb79b625983cd6dd6183f17955234ce67e2219788607732f5c4e"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-ffmpeg-9.0.2-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-ffmpeg"
+      ],
+      "CSIZE": [
+        "25266267"
+      ],
+      "SHA256SUM": [
+        "846090a3277f249103705bbc48f3d7b49737463f279d6a5963050cd67ec3eb21"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-aom-3.15.3-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-aom"
+      ],
+      "CSIZE": [
+        "3800930"
+      ],
+      "SHA256SUM": [
+        "0fcdc93058a9b937e4f4faa0d6b03aa901c2ef568f5bb68ed88bd9c05a7a33f7"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-dav1d-1.5.4-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-dav1d"
+      ],
+      "CSIZE": [
+        "903148"
+      ],
+      "SHA256SUM": [
+        "ccf26c6f29fd36f5692d57fd5e0fe3becec492e0b875fd5e04f47a9582eb8b37"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-frei0r-plugins-3.7.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-frei0r-plugins"
+      ],
+      "CSIZE": [
+        "750099"
+      ],
+      "SHA256SUM": [
+        "005a1687d7241559e913c80d64c421d98cfa97f5dff302d826c7f92490fd04af"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gsm-1.0.24-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gsm"
+      ],
+      "CSIZE": [
+        "68289"
+      ],
+      "SHA256SUM": [
+        "13a27cb11190c7c7c75fa9d1b227bad9044c70a2430ea87931773daca32a13b1"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libass-0.17.5-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libass"
+      ],
+      "CSIZE": [
+        "212411"
+      ],
+      "SHA256SUM": [
+        "4385fd47a77784478878f0f03f2d9afa59a5ac71facb7cad1dfe19c555e75762"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libunibreak-7.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libunibreak"
+      ],
+      "CSIZE": [
+        "36294"
+      ],
+      "SHA256SUM": [
+        "de657828b41248a2fd67fa6e8348402a61ef130b0444f1f006c6545c43ad86d8"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libbluray-1.5.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libbluray"
+      ],
+      "CSIZE": [
+        "337157"
+      ],
+      "SHA256SUM": [
+        "1713a92076608db29c6d67dab95da04150d671dbdddf010ed9ee90049bd2e2ed"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libexif-0.6.26-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libexif"
+      ],
+      "CSIZE": [
+        "594333"
+      ],
+      "SHA256SUM": [
+        "b1bfcb8f983fcbf7d7078e11fa92aa3a77048e94e317a407bfc6f19c7086f741"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libgme-0.6.5-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libgme"
+      ],
+      "CSIZE": [
+        "245249"
+      ],
+      "SHA256SUM": [
+        "f227b2f1beafd244a63f440677fcc6c99d2aa717f23f4443394a4b0770c4c951"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libjxl-0.13.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libjxl"
+      ],
+      "CSIZE": [
+        "2677982"
+      ],
+      "SHA256SUM": [
+        "85c7c2d81b153a3219072cca8a9fd331a0829a8ecc15b891df995460d4e4ffee"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-highway-1.4.0-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-highway"
+      ],
+      "CSIZE": [
+        "1578590"
+      ],
+      "SHA256SUM": [
+        "4d2ed7c528c2323e1bf05921963181412b7a33eee1cde798fdd7e613f59b2ab3"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-lcms2-2.20-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-lcms2"
+      ],
+      "CSIZE": [
+        "400105"
+      ],
+      "SHA256SUM": [
+        "4e1d12047e72c63832f2b50c2fc87c7ec9d2e5a8bd40ce6e820ccbeedf2e7b8f"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-openexr-3.5.4-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-openexr"
+      ],
+      "CSIZE": [
+        "1141564"
+      ],
+      "SHA256SUM": [
+        "a39d4f1a62523f63977209647de31a286ad50bb31b6cc5941454738b6b38464d"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-imath-3.2.3-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-imath"
+      ],
+      "CSIZE": [
+        "5049021"
+      ],
+      "SHA256SUM": [
+        "7a2e2175d5bd126c277e1eb0a059004f8750918e7dbbd447554c7b46dca34d60"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-openjph-0.32.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-openjph"
+      ],
+      "CSIZE": [
+        "371278"
+      ],
+      "SHA256SUM": [
+        "5ef96678170cf69ebb553723cf9209e61ce21f85b7afe084da7797d686e98b5c"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libmodplug-0.8.9.0-5-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libmodplug"
+      ],
+      "CSIZE": [
+        "250695"
+      ],
+      "SHA256SUM": [
+        "7bac0ddfde760dbcee6e07ea0e8b32cd560f53deec11edfa5391337ccc6158b5"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libssh-0.12.2-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libssh"
+      ],
+      "CSIZE": [
+        "423141"
+      ],
+      "SHA256SUM": [
+        "1be494f5fad8bf1210a1eeaccdd07d3e8319f4d13cd79a9302ae196fcc96da8b"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libplacebo-7.387.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libplacebo"
+      ],
+      "CSIZE": [
+        "814935"
+      ],
+      "SHA256SUM": [
+        "e30ab96249a06a18012d93b88318fe0ddb04e815fda0310bcf3d5dc0f4ba0131"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libdovi-3.4.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libdovi"
+      ],
+      "CSIZE": [
+        "2094197"
+      ],
+      "SHA256SUM": [
+        "fd683eb03572f56db2cbdf0ffc2131bb93a21a0edbbda44862e3ef7eb98ebf00"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-shaderc-2026.4-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-shaderc"
+      ],
+      "CSIZE": [
+        "3794027"
+      ],
+      "SHA256SUM": [
+        "a4ad271f76acd2307ed67738770b30d6486bd3c7acff63ba83dd13e56ce9ab82"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-glslang-16.6.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-glslang"
+      ],
+      "CSIZE": [
+        "2422278"
+      ],
+      "SHA256SUM": [
+        "74742908b850637e4f0710cd9630f511b0def5b0f18d653cf9657197758bda82"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-spirv-tools-3~1.4.363.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-spirv-tools"
+      ],
+      "CSIZE": [
+        "3435292"
+      ],
+      "SHA256SUM": [
+        "d31d67fe918aeee21d1e930fd96360856a60146d23094e4ae8baf071a4049aaa"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-spirv-cross-1~1.4.363.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-spirv-cross"
+      ],
+      "CSIZE": [
+        "2195633"
+      ],
+      "SHA256SUM": [
+        "246759d1a8391c67a4180ad4d103a78219182ef7057d70469394fa6c40851187"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-vulkan-loader-1~1.4.363.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-vulkan-loader"
+      ],
+      "CSIZE": [
+        "222857"
+      ],
+      "SHA256SUM": [
+        "065076fe13d39ab97eea4740596426d5ae741b5044e48e1c9495d04835c92dbe"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-librsvg-2.63.4-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-librsvg"
+      ],
+      "CSIZE": [
+        "21754333"
+      ],
+      "SHA256SUM": [
+        "a47e66bf8df578990ba4421bb7234e525f32739ede1473323425a62066ce7fe8"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libsoxr-0.1.3-6-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libsoxr"
+      ],
+      "CSIZE": [
+        "189690"
+      ],
+      "SHA256SUM": [
+        "29ace511f4ca8c2f58a218837478eb15b99246690849ef8e6d679cc7fc70fe69"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libgomp-16.2.0-7-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libgomp"
+      ],
+      "CSIZE": [
+        "311448"
+      ],
+      "SHA256SUM": [
+        "ca3c10421830f19247c701bec9a2ac8f3d6514685c8c9d1733fd5c89fa2da3ef"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libva-2.24.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libva"
+      ],
+      "CSIZE": [
+        "246531"
+      ],
+      "SHA256SUM": [
+        "bd3c2aabe37534f17aaa11a5d846034b56b6890767abcbfb2e8c3fd9153a1a6f"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libvpl-2.17.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libvpl"
+      ],
+      "CSIZE": [
+        "378143"
+      ],
+      "SHA256SUM": [
+        "ae9c80f22fa62e533fbef09d4650e1152588e905b9a42b8f7ae4a2c12c27ae77"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-openal-1.25.2-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-openal"
+      ],
+      "CSIZE": [
+        "1818095"
+      ],
+      "SHA256SUM": [
+        "fc08e781610b08503b17fbb60c24a64a801938b4a28ba6838164b6e9fe2db0e3"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libmysofa-1.3.5-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libmysofa"
+      ],
+      "CSIZE": [
+        "1203638"
+      ],
+      "SHA256SUM": [
+        "ff8ff472d14376194fcf57d51adb56033c30d6d0b81824e193b03b8a4b105bdd"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-openjpeg2-2.5.4-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-openjpeg2"
+      ],
+      "CSIZE": [
+        "454223"
+      ],
+      "SHA256SUM": [
+        "2a4c148052b6f8e47abe5e98b29fd8942e2e3c17722ff00f172b1630897a10b9"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-rav1e-0.8.1-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-rav1e"
+      ],
+      "CSIZE": [
+        "2450140"
+      ],
+      "SHA256SUM": [
+        "00a03a734f96f66405ad79bae2ffb1c5cf2b050ef90a4ffa508ddbfdb64c0fb1"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-rtmpdump-2.6-2-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-rtmpdump"
+      ],
+      "CSIZE": [
+        "129306"
+      ],
+      "SHA256SUM": [
+        "a62df12a96f6a7c5945bd2e3c437af6c04503475e897d437e772ff153fe4acba"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-sdl2-compat-2.32.74-5-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-sdl2-compat"
+      ],
+      "CSIZE": [
+        "2189179"
+      ],
+      "SHA256SUM": [
+        "6815eee88d80d8a3394bcbc2eba9ad4e6014d3d41c3ab36efd7b167d9603d16f"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-sdl3-3.4.20-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-sdl3"
+      ],
+      "CSIZE": [
+        "2498189"
+      ],
+      "SHA256SUM": [
+        "4a44381560c433ff42da3a6aff788fba2bba84a44b7f63ea396dec9c1cf79f78"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-srt-1.5.7-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-srt"
+      ],
+      "CSIZE": [
+        "798115"
+      ],
+      "SHA256SUM": [
+        "f68cd966e8e7cba30a7884accc280fee82d508bddb0544f3c88f69872b783076"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-svt-av1-4.3.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-svt-av1"
+      ],
+      "CSIZE": [
+        "3323426"
+      ],
+      "SHA256SUM": [
+        "eb5d2a1ed600d606cbfaafa056674940cb2bd38c8b9bdd1003b2e64aff5d889a"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-liblc3-1.1.3-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-liblc3"
+      ],
+      "CSIZE": [
+        "119705"
+      ],
+      "SHA256SUM": [
+        "e97b0b2f9d7b9e5452f883e01cbad504624f4fb036fe889ddd3ba6cec254c5aa"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-vid.stab-1.1.2-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-vid.stab"
+      ],
+      "CSIZE": [
+        "105135"
+      ],
+      "SHA256SUM": [
+        "fc41ab627a97fe11dd53ccfd3feea9e0cd859f59c11aec929d13d1f84393ed06"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-ggml-0.29.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-ggml"
+      ],
+      "CSIZE": [
+        "7840125"
+      ],
+      "SHA256SUM": [
+        "13f57be4fad37b9365f254ddba4bd5ffdca4073ae37706df71d11a3722334ab2"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-openblas-0.3.34-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-openblas"
+      ],
+      "CSIZE": [
+        "12269481"
+      ],
+      "SHA256SUM": [
+        "d9e14c9440d9aa70b6d09cdf0b8117995d181ced9c3d233ad7b62a907982add5"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libgfortran-16.2.0-7-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libgfortran"
+      ],
+      "CSIZE": [
+        "1223276"
+      ],
+      "SHA256SUM": [
+        "0546991e54fbcb42e2da8183d2929517f4b24f6e2f8c8f29dba4bc38bc91fbac"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libquadmath-16.2.0-7-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libquadmath"
+      ],
+      "CSIZE": [
+        "179299"
+      ],
+      "SHA256SUM": [
+        "3ad7b841a0579da5462a6f82c773a2fe9ef4b7cfb5ba98474ad9a32365b5a508"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-opencl-icd-2026.05.29-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-opencl-icd"
+      ],
+      "CSIZE": [
+        "85231"
+      ],
+      "SHA256SUM": [
+        "4e0dab8d5cc3da24edb716d78b013c1a36fc111b06f0f286a949218665d71a98"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-whisper.cpp-1~1.9.5.r258.g4da27c41c-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-whisper.cpp"
+      ],
+      "CSIZE": [
+        "1187299"
+      ],
+      "SHA256SUM": [
+        "5bf4a4fa5b16f396e87b1cc2fb38ffc73b34008db858f3e12942f5364c75535a"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-llama.cpp-1~0.9.0-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-llama.cpp"
+      ],
+      "CSIZE": [
+        "8933735"
+      ],
+      "SHA256SUM": [
+        "d8bc7c736674d171ddcadc43e17f43780e878225feb9d85c5ffb9a63a9d6b9ef"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-SDL2-2.32.10-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-SDL2"
+      ],
+      "CSIZE": [
+        "1551429"
+      ],
+      "SHA256SUM": [
+        "9e77124b14bedaafbfb44ac26e5fb43890184db23292cebf2251b2178fad6693"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libx264-0.165.r3222.b35605a-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libx264"
+      ],
+      "CSIZE": [
+        "819270"
+      ],
+      "SHA256SUM": [
+        "10d3817153fc05832643ebc5da9aec940b4ae2d9dadb6643ac3c282985880434"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-x265-4.3-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-x265"
+      ],
+      "CSIZE": [
+        "3647877"
+      ],
+      "SHA256SUM": [
+        "40dd235ba4294266ecad0eec661fae7db25dfe9df2ee9a7c3e07b0d079ae2034"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-xvidcore-1.3.7-5-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-xvidcore"
+      ],
+      "CSIZE": [
+        "332115"
+      ],
+      "SHA256SUM": [
+        "4aa825b97f073dafc328e0c1f6e7d2574b42dc0c0e91eb71f908ded6926a1284"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-zimg-3.0.6-3-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-zimg"
+      ],
+      "CSIZE": [
+        "359421"
+      ],
+      "SHA256SUM": [
+        "add647f0b898696b7369098a0779e6df4499de20080b6888ada565ac987cef26"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-zvbi-0.2.46-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-zvbi"
+      ],
+      "CSIZE": [
+        "325424"
+      ],
+      "SHA256SUM": [
+        "310c6ca10acdb65f0ac974216a0476b29ae97e2ed138128ca17bea1263263f7e"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-libplist-2.7.0-4-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-libplist"
+      ],
+      "CSIZE": [
+        "246043"
+      ],
+      "SHA256SUM": [
+        "665607c34dbf923ebb820d78b376db59de4d2d3874a45d70f24f51eb1d64f127"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gst-plugins-bad-1.28.9-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gst-plugins-bad"
+      ],
+      "CSIZE": [
+        "4046574"
+      ],
+      "SHA256SUM": [
+        "f04c30bdbcadff038d3312dfdd6b4e76708d8f4ab0a52d709b729298822ded3f"
+      ]
+    },
+    {
+      "FILENAME": [
+        "mingw-w64-ucrt-x86_64-gst-plugins-bad-libs-1.28.9-1-any.pkg.tar.zst"
+      ],
+      "NAME": [
+        "mingw-w64-ucrt-x86_64-gst-plugins-bad-libs"
+      ],
+      "CSIZE": [
+        "1890366"
+      ],
+      "SHA256SUM": [
+        "e4be89729c41a54b30ab895f93c65fc0c2b54a4dd68effab21a290b9937649cf"
+      ]
+    }
+  ]
+}

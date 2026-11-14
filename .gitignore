@@ -1,0 +1,14 @@
+node_modules/
+out/
+dist/
+vendor/
+artifacts/*.png
+.DS_Store
+resources/receiver/bin/
+resources/receiver/lib/
+resources/receiver/source/
+resources/receiver/licenses/
+windows-validation.json
+.env
+.env.*
+!.env.example

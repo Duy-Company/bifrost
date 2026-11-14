@@ -1,0 +1,113 @@
+{
+  "name": "bifrost",
+  "version": "1.0.0",
+  "description": "Bifrost — Wireless screen receiver for Windows",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && electron-vite build",
+    "build:win": "node scripts/check-runtime.mjs && npm run build && electron-builder --win --x64 --dir",
+    "dist:win": "node scripts/check-runtime.mjs && npm run build && electron-builder --win zip nsis --x64 --publish never",
+    "preview": "electron-vite preview",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "test:e2e": "node scripts/smoke.mjs",
+    "format": "prettier --write electron renderer shared tests scripts/*.mjs *.ts *.json",
+    "build:receiver": "node scripts/build-receiver.mjs"
+  },
+  "keywords": [],
+  "author": "Duy",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "electron-updater": "^6.8.11",
+    "lucide-react": "^1.73.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "electron": "^45.3.2",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^6.0.0",
+    "prettier": "3.10.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  },
+  "build": {
+    "appId": "com.bifrost.receiver",
+    "productName": "Bifrost",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/receiver",
+        "to": "receiver"
+      },
+      {
+        "from": "native/windows",
+        "to": "windows"
+      },
+      {
+        "from": "resources/icon.png",
+        "to": "icon.png"
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "minimumSystemVersion": "14.0",
+      "icon": "resources/icon.icns",
+      "target": [
+        "zip"
+      ],
+      "identity": "-",
+      "entitlements": "resources/entitlements.mac.plist",
+      "entitlementsInherit": "resources/entitlements.mac.plist"
+    },
+    "artifactName": "Bifrost-${version}-${arch}.${ext}",
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "resources/icon.ico",
+      "signExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Duy-Company",
+        "repo": "bifrost",
+        "releaseType": "release"
+      }
+    ]
+  },
+  "overrides": {
+    "minimatch@>=7 <11.0.1": "^11.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Duy-Company/bifrost.git"
+  },
+  "homepage": "https://github.com/Duy-Company/bifrost",
+  "bugs": {
+    "url": "https://github.com/Duy-Company/bifrost/issues"
+  }
+}
